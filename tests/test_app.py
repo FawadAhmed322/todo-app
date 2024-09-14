@@ -10,8 +10,7 @@ def client():
 
 def test_get_todos(client):
     response = client.get('/todos')
-    assert response.status_code == 200
-    assert response.get_json() == []
+    assert response.status_code == 404  # Wrong status code (should cause test failure)
 
 
 def test_add_todo(client):
@@ -19,4 +18,4 @@ def test_add_todo(client):
     assert response.status_code == 201
     assert response.get_json()['message'] == 'Todo added!'
 
-# Ensure the file ends with a blank line
+    # Introduce a linting issue by removing blank lines (to trigger flake8 error)
