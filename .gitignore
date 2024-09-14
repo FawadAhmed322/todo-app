@@ -3,59 +3,86 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# Virtual environment
-venv/
-.env/
-.venv/
+# C extensions
+*.so
 
 # Distribution / packaging
+.Python
 build/
+develop-eggs/
 dist/
-*.egg-info/
+downloads/
+eggs/
 .eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
 
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
+# Virtual environment
+venv/
+env/
+ENV/
+.venv/
+.env/
 
-# Unit test / coverage reports
+# Pipenv and poetry
+Pipfile
+Pipfile.lock
+poetry.lock
+# PEP 582; used by e.g. github.com/David-OConnor/pyflow
+__pypackages__/
+
+# Test cache directories
+.tox/
+.nox/
 .coverage
-.coverage.*
-.cache
-.pytest_cache/
-nosetests.xml
+.cache/
 coverage.xml
+*.cover
+.hypothesis/
+pytest_cache/
+.pytest_cache/
 
-# Flask specific
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+
+# Flask stuff:
 instance/
-.webassets-cache/
+.webassets-cache
 
-# Docker files
-**/Dockerfile
-**/docker-compose.yml
+# Scrapy stuff:
+.scrapy
 
-# Environment variables
-.env
+# Sphinx documentation
+docs/_build/
 
-# IDE and Editor configurations
+# PyInstaller
+*.manifest
+*.spec
+
+# pyenv
+.python-version
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Editor and IDE settings
 .vscode/
 .idea/
 *.sublime-project
 *.sublime-workspace
 
-# OS generated files
+# macOS & Linux system files
 .DS_Store
-Thumbs.db
-Desktop.ini
-
-# Logs and databases
-*.log
-*.sqlite3
-
-# Temporary files
-*.tmp
 *.swp
 *~
 
-# Secrets
-secrets.json
