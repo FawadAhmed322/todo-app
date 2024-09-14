@@ -22,15 +22,23 @@ jobs:
     - name: Install dependencies
       run: |
         python -m venv venv  # Create virtual environment
-        source venv/bin/activate  # Activate it
+        source venv/bin/activate  # Activate the virtual environment
         pip install --upgrade pip  # Upgrade pip
         pip install -r requirements.txt  # Install dependencies
 
-    - name: Set PYTHONPATH  # Add this step to ensure the app module can be found
+    - name: Set PYTHONPATH  # Ensure the app module can be found
       run: |
         echo "PYTHONPATH=$PWD" >> $GITHUB_ENV
 
-    - name: Run tests
+    - name: Run flake8  # Linting with flake8 for code quality
+      run: |
+        source venv/bin/activate
+        pip install flake8  # Install flake8 if not already in requirements.txt
+        flake8 app/ tests/  # Run flake8 on your app and tests directories
+
+    - name: Run tests with coverage  # Run tests and measure coverage
       run: |
         source venv/bin/activate  # Activate virtual environment
-        pytest  # Run the tests
+        pip install coverage  # Install coverage if not already in requirements.txt
+        coverage run -m pytest  # Run tests with coverage
+        coverage report  # Print the coverage report
