@@ -18,5 +18,3 @@ def test_add_todo(client):
     response = client.post('/todos', json={'todo': 'Test Todo'})
     assert response.status_code == 201
     assert response.get_json()['message'] == 'Todo added!'
-
-# Ensure the file ends with a blank line
