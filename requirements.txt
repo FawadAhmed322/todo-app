@@ -16,5 +16,4 @@ pycodestyle==2.12.1
 pyflakes==3.2.0
 pytest==8.3.3
 setuptools==74.1.2
-todo_app @ file:///D:/Projects/todo-app
 Werkzeug==3.0.4
